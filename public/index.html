@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rev (Gemini Live) — Minimal Voice</title>
+  <style>
+    :root { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    body { margin: 0; padding: 24px; background: #0b0d12; color: #f2f5f7; }
+    .card { max-width: 820px; margin: 0 auto; background: #121622; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,.4); padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 1.4rem; }
+    .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    button { border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 600; cursor: pointer; }
+    button.primary { background: #4f46e5; color: white; }
+    button.secondary { background: #1f2937; color: #c7d2fe; }
+    button.danger { background: #dc2626; color: white; }
+    .pill { padding: 6px 10px; border-radius: 999px; background: #0f172a; color: #cbd5e1; font-size: 12px; }
+    .log { height: 260px; overflow: auto; background: #0f1420; border-radius: 12px; padding: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; }
+    .status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+    audio { display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Rev — Revolt Motors Voice (Gemini Live)</h1>
+    <p class="pill" id="ws-status"><span class="status-dot" style="background:#ef4444"></span> disconnected</p>
+    <div class="row">
+      <button id="btnConnect" class="secondary">Connect</button>
+      <button id="btnMic" class="primary">Start talking</button>
+      <button id="btnStop" class="danger">Stop</button>
+      <select id="quickAsk">
+        <option value="">Quick prompt…</option>
+        <option>What are the current offers on the RV400?</option>
+        <option>Can I book a test ride near Pune?</option>
+        <option>Switch to Hindi and tell me about charging options.</option>
+      </select>
+    </div>
+    <p style="opacity:.8;margin-top:8px">Tip: You can barge in — speak while the assistant is talking, and it will stop.</p>
+    <div class="log" id="log"></div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
